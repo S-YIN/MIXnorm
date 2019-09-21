@@ -2,6 +2,8 @@
 
 ## Dependencies
 
+R version 3.5.3 (2019-3-11)
+
 R version 3.5.3 (2019-03-11) 
 Platform: x86_64-apple-darwin15.6.0 (64-bit) 
 Running under: macOS Mojave 10.14.5 
