@@ -34,8 +34,8 @@ dzip <- function(x, delta,pi_j)
   #returns the log-likelihood of each row of x
 }
 
-
-# Main function for the nested EM algorithm.
+################################################################################
+# Main function for the nested EM algorithm. This function returns the MLEs.
 MIXnorm <- function(dat, max_iter, tol)
 {
   #deal with NA
@@ -192,7 +192,9 @@ MIXnorm <- function(dat, max_iter, tol)
               pi_j = pi_j))
 }
 
-
+################################################################################
+#This function is the final normalization function. 
+#Returns the normalized data and proportion of expressed genes and probability of each gene being expressed
 func_MIXnorm <- function(dat,max_iter = 100, tol = 1e-3)
 {
   MIX_res <- MIXnorm(dat,max_iter=max_iter, tol=tol) #call function MIXnorm solve for MLE
