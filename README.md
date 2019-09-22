@@ -23,3 +23,6 @@ The MIXnorm is implemented in R. The scripts are under folder [R](https://github
 Install packages from dependencies and use [MIXnorm_main.R](https://github.com/S-YIN/MIXnorm/blob/create-R/R/MIXnorm_main.R).  The func_MIXnorm function takes a read count matrix as input and produces the normalized data, porprotion of expressed genes in the study and the probability of being expressed for each gene.
 ### Call R from command lines
 Please refer to [MIXnorm.txt](https://github.com/S-YIN/MIXnorm/blob/create-R/R/MIXnorm.txt) for instruction. This will also return an empirical density plot and a histogram of zero-count proportions (from [plot.R](https://github.com/S-YIN/MIXnorm/blob/create-R/R/plot.R)) for the input data besides the standard output.
+
+Example plots using the ccRCC FFPE RNA-seq data.
+[exploratory](https://github.com/S-YIN/MIXnorm/blob/create-R/exploratory.png)
