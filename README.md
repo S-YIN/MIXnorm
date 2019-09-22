@@ -18,4 +18,4 @@ R Packages: truncnorm_1.0-8
 * protein_gene.txt is a text file contains the name of all protein coding genes.
 
 ## Usage
-The MIXnorm is implemented in R. The scripts are under folder [R] (https://github.com/S-YIN/MIXnorm/tree/create-R/R). 
+The MIXnorm is implemented in R. The scripts are under folder [R](https://github.com/S-YIN/MIXnorm/tree/create-R/R). 
