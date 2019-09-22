@@ -25,4 +25,4 @@ Install packages from dependencies and use [MIXnorm_main.R](https://github.com/S
 Please refer to [MIXnorm.txt](https://github.com/S-YIN/MIXnorm/blob/create-R/R/MIXnorm.txt) for instruction. This will also return an empirical density plot and a histogram of zero-count proportions (from [plot.R](https://github.com/S-YIN/MIXnorm/blob/create-R/R/plot.R)) for the input data besides the standard output.
 
 Example plots using the ccRCC FFPE RNA-seq data.
-![exploratory](https://github.com/S-YIN/MIXnorm/blob/create-R/exploratory.png)
+![exploratory](https://github.com/S-YIN/MIXnorm/blob/master/exploratory.png)
