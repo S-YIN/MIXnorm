@@ -15,4 +15,7 @@ R Packages: truncnorm_1.0-8
 
 * FFPE_41_data.csv and FF_41_data.csv are soft tissue sarcomas data from Lesluyes et al. (2016), which contains 20,242 protein coding genes and 41 paired FF and FFPE RNA-seq data.
 
-* protein_genes.txt is a text file contains the name of all protein coding genes.
+* protein_gene.txt is a text file contains the name of all protein coding genes.
+
+## Usage
+The MIXnorm is implemented in R. The scripts are under folder [R] ()
