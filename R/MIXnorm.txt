@@ -1,0 +1,4 @@
+Rscript MIXnorm_interface.R TestData.csv 100 1e-3
+#first argument (TestData.csv) is the input data
+#second argument is maximum number of iterations (int, default is 100, range:(100,500))
+#third argument is the convergence criteria (float, default is 1e-3, range:(1e-5,1e-2))
