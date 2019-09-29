@@ -1,5 +1,7 @@
 # The MIXnorm RNA-seq Data Normalization
 
+![systematic](https://github.com/S-YIN/MIXnorm/blob/readme-change/systematic.png)
+
 ## Dependencies
 
 R version: 3.5.3 (2019-3-11)
