@@ -1,5 +1,7 @@
 # The MIXnorm RNA-seq Data Normalization
 
+## Introduction
+MIXnorm is a normalization method designed for Formalin-Fixed Para􏰌n-Embedded (FFPE) RNA-sequencing (RNA-seq) data. MIXnorm relies on a two-component mixture model, which models non-expressed genes by zero-inflated Poisson distributions and models expressed genes by truncated normal distributions. Though designed specifically for FFPE RNA-seq data, MIXnorm is directly applicable to normalize fresh-frozen (FF) RNA-seq data as a special case of FFPE RNA-seq normalization. To obtain the maximum likelihood estimates, we developed a nested EM algorithm, in which closed-form updates are available in each iteration.
 
 ## Dependencies
 
