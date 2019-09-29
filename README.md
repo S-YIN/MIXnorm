@@ -1,6 +1,5 @@
 # The MIXnorm RNA-seq Data Normalization
 
-![systematic](https://github.com/S-YIN/MIXnorm/blob/readme-change/systematic.png)
 
 ## Dependencies
 
