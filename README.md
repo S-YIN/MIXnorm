@@ -9,7 +9,7 @@ R version: 3.5.3 (2019-3-11)
 
 Platform: x86_64-apple-darwin15.6.0 (64-bit)
 
-Running under: macOS Mojave 10.14.5
+Developed under: macOS Mojave 10.14.5
 
 R Packages: truncnorm_1.0-8
 
@@ -17,17 +17,37 @@ R Packages: truncnorm_1.0-8
 Input file should be a raw read count matrix in gene level with (J genes)*(I samples).
 
 ## Example
-### Example data
-* The TestData.csv is the clear cell renal cell carcinoma (ccRCC) data from  Eikrem et al. (2016), which contains 18,458 protein coding genes and 32 FFPE RNA-seq data. The RNAlaterdata.csv is the paired RNAlater RNA-seq data from ccRCC.
+### Install
+You can install FFPEnorm from `github` using the `devtool`. 
 
-* FFPE_41_data.csv and FF_41_data.csv are soft tissue sarcomas data from Lesluyes et al. (2016), which contains 20,242 protein coding genes and 41 paired FF and FFPE RNA-seq data.
+```{r}
+install.packages("devtools")
+library(devtools)
+install_github("S-YIN/MIXnorm")
+library(MIXnorm)
+```
+
+### Example data
+The ccRCC.RData is the clear cell renal cell carcinoma (ccRCC) data from  Eikrem et al. (2016), which contains 18,458 protein coding genes and 32 FFPE RNA-seq data.
+
+```{r}
+data(ccRCC)
+head(ccRCC)
+```
 
 ### Usage
-The MIXnorm is implemented in R. The scripts are under folder [R](https://github.com/S-YIN/MIXnorm/tree/create-R/R). 
-### Run in R
-Install packages from dependencies and use [MIXnorm_main.R](https://github.com/S-YIN/MIXnorm/blob/create-R/R/MIXnorm_main.R).  The func_MIXnorm function takes a read count matrix as input and produces the normalized data, porprotion of expressed genes in the study and the probability of being expressed for each gene.
-### Call R from command lines
-Please refer to [MIXnorm.txt](https://github.com/S-YIN/MIXnorm/blob/create-R/R/MIXnorm.txt) for instruction. This will also return an empirical density plot and a histogram of zero-count proportions (from [plot.R](https://github.com/S-YIN/MIXnorm/blob/create-R/R/plot.R)) for the input data besides the standard output.
+The MIXnom is implemented in R. The scripts are under folder [R](https://github.com/S-YIN/MIXnorm/tree/create-R/R).  `func_MIXnorm` is the core functions that produces the normalized expression matrix, proportion of expressed genes and the probability of being expressed for each gene. 
 
-Example plots using the ccRCC FFPE RNA-seq data.
-![exploratory](https://github.com/S-YIN/MIXnorm/blob/master/exploratory.png)
+```{r}
+mix <- func_MIXnorm(dat = ccRCC, max_iter = 20, tol = 0.01, log_file = "MIXnorm.log", appr = TRUE)
+normalized.by.mix <- mix$MIX_normalized_log
+express.gene.mix <- rownames(ccRCC)[mix$D > 0.5]
+```
+
+### Details
+* The input data must be raw read count matrix of dimension `J genes * I samples`.
+* The default maximum number of nested EM iteration (max_iter) is `20`, recommend range `(10, 50)`.
+* The default convergency criteria (tol) is `0.01`, recommend range `(1e-5, 1)`.
+* A log file will be written to the current working directory during the normalization process. The default file name is `MIXnorm.log` for `func_MIXnorm`. 
+* The default setting uses an approximate version of normalization (`appr=TRUE`). The exact normalization uses the posterior probabilities of genes being expressed or not to produce the normalized data. The approximate version uses a cut-off value of `0.5` on those probabilities to classify genes as expressed or not, then non-expressed genes will be normalized to exact `0`.  
+
