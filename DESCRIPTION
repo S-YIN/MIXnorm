@@ -1,0 +1,17 @@
+Package: MIXnorm
+Title: FFPE RNA-seq Data Normalization
+Version: 0.0.0.9000
+Depends: R (>= 3.5.0),stats
+Imports: truncnorm
+Authors@R: 
+    person(given = "Shen",
+           family = "Yin",
+           role = c("aut", "cre"),
+           email = "syin@smu.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: MIXnorm is a RNA-seq data normalization method developed for Formalin-Fixed Paraffin-Embedded (FFPE) tissues RNA-seq data. MIXnorm is based on a two-component mixture model. Expressed genes are modeled by truncated normal distributions (in natural log scale). Non-expressed genes are modeled by zero-inflated Poisson distributions. Note that though designed for FFPE RNA-seq data, MIXnorm is directly applicable to fresh frozen or like sample RNA-seq data.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.99.9001
+
